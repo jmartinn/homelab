@@ -1,0 +1,7 @@
+private/
+.DS_Store
+
+__pycache__
+.envrc
+kubeconfig
+valhalla/

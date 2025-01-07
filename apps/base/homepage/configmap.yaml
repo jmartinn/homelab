@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homepage
+data:
+  settings.yaml: |
+    title: My Homelab Dashboard
+    theme: dark
+    color: slate
+    favicon: https://raw.githubusercontent.com/gethomepage/homepage/main/public/android-chrome-192x192.png
+
+  services.yaml: |
+    - name: Infrastructure
+      items:
+        - name: Grafana
+          icon: chart-line
+          href: https://grafana.jmartinn.net
+
+  kubernetes.yaml: |
+    mode: cluster
+    cluster:
+      api: https://kubernetes.default.svc
+      serviceAccount:
+        tokenPath: /var/run/secrets/kubernetes.io/serviceaccount/token
