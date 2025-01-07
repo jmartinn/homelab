@@ -4,17 +4,10 @@ metadata:
   name: homepage
 data:
   settings.yaml: |
-    title: My Homelab Dashboard
+    title: Your Homelab Dashboard
     theme: dark
     color: slate
     favicon: https://raw.githubusercontent.com/gethomepage/homepage/main/public/android-chrome-192x192.png
-
-  services.yaml: |
-    - name: Infrastructure
-      items:
-        - name: Grafana
-          icon: chart-line
-          href: https://grafana.jmartinn.net
 
   kubernetes.yaml: |
     mode: cluster
@@ -22,3 +15,30 @@ data:
       api: https://kubernetes.default.svc
       serviceAccount:
         tokenPath: /var/run/secrets/kubernetes.io/serviceaccount/token
+
+  services.yaml: |
+    - name: System & Monitoring
+      icon: chart-line
+      items:
+        - name: Grafana
+          icon: chart-bar
+          href: https://grafana.jmartinn.net
+          description: System Monitoring & Metrics
+          indicator: true
+          
+    - name: Infrastructure
+      icon: server
+      items:
+        - name: Homepage
+          icon: house
+          href: https://homepage.jmartinn.net
+          description: Homelab Dashboard
+          indicator: true
+
+    - name: Network
+      icon: wifi
+      items:
+        - name: Cloudflare
+          icon: cloud
+          href: https://dash.cloudflare.com
+          description: DNS & Tunnel Management
