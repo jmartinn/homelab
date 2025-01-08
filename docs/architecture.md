@@ -54,17 +54,17 @@ graph TD
 
 ```
 homelab/
-├── apps/                  # Application deployments
-│   ├── base/             # Base configurations
-│   └── production/       # Production overrides
-├── infrastructure/       # Core infrastructure
+├── apps/                # Application deployments
+│   ├── base/            # Base configurations
+│   └── production/      # Production overrides
+├── infrastructure/      # Core infrastructure
 │   ├── configs/         # Infrastructure configurations
 │   └── controllers/     # Infrastructure controllers
 ├── monitoring/          # Monitoring stack
 │   ├── configs/         # Monitoring configurations
 │   └── controllers/     # Monitoring controllers
-└── clusters/           # Cluster-specific configurations
-    └── production/     # Production cluster manifests
+└── clusters/            # Cluster-specific configurations
+    └── production/      # Production cluster manifests
 ```
 
 ## Security Considerations
