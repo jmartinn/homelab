@@ -1,4 +1,3 @@
-```markdown
 # Homelab Commands Reference
 
 ## Flux Commands
