@@ -1,19 +1,41 @@
 # Homelab
 
-This repo contains all the configuration and documentation of my homelab.
+My personal homelab running on Kubernetes (microk8s) with GitOps practices using Flux CD.
 
-The purpose of my homelab is to learn, to have fun and take advantage of what you build in the process. By self-hosting some applications, it makes me feel responsible for the entire process of deploying and maintaining an application from A to Z. It forces me to think about backup strategies, security, scalability and the ease of deployment and maintenance.
+## Components
 
-## Tooling
+- **Infrastructure**
+  - Kubernetes: MicroK8s
+  - GitOps: Flux CD
+  - Ingress: Cloudflare Tunnel
+  - SSL/TLS: Provided through Cloudflare
+  - Secrets Management: Sealed Secrets
 
-- k3s
+- **Monitoring**
+  - Prometheus: Metrics collection and storage
+  - Grafana: Metrics visualization and dashboards
+
+- **User Interface**
+  - Homepage: Central dashboard for services
+  - Custom domain setup with SSL/TLS
+
+## Getting Started
+
+See the [installation guide](docs/installation.md) for step-by-step setup instructions.
+
+## Documentation
+
+- [Installation Guide](docs/installation.md)
+- [Architecture Overview](docs/architecture.md)
+- [Monitoring Stack](docs/monitoring.md)
+- [Networking & Security](docs/networking.md)
 
 ## Goals
 
-- Run Prometheus and Grafana stack as well as some databases
-- Have Grafana dashboard available with a URL
-    - ingress
-    - tls
-    - DNS
-- Everything should be deployed using GitOps
-    - Try out Flux
+- [x] Run Prometheus and Grafana stack
+- [x] External access with proper DNS and TLS
+- [x] GitOps deployment with Flux
+- [ ] Database management and backup strategies
+- [ ] Additional self-hosted services
+- [ ] Automated backup solutions
+- [ ] High availability configurations
