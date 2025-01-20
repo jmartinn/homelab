@@ -11,5 +11,3 @@ configMapGenerator:
   - name: minecraft-mods
     files:
       - mods/
-    options:
-      disableNameSuffix: true
