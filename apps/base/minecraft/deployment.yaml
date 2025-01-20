@@ -29,7 +29,7 @@ spec:
             - name: VERSION
               value: "1.19.2"
             - name: FORGE_VERSION
-              value: "43.4.0"
+              value: "43.3.9"
             - name: MEMORY
               value: "4G"
           volumeMounts:
