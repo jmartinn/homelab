@@ -5,6 +5,7 @@ resources:
   # - health-api
   # - home-assistant
   - homepage
+  - minecraft
   # - linkding
   # - mealie
   # - n8n
