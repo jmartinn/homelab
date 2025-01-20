@@ -10,7 +10,7 @@ resources:
 configMapGenerator:
   - name: minecraft-mods
     files:
-      - mods/
+      - mods/*.jar
   - name: minecraft-config
     files:
       - server.properties
