@@ -15,7 +15,6 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: minecraft
-    restartPolicy: Always
     spec:
       containers:
         - name: minecraft
