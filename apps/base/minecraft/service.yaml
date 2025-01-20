@@ -7,10 +7,11 @@ metadata:
     app: minecraft
 spec:
   ports:
-    - port: 25565
+    - name: minecraft  # Add a name for the game port
+      port: 25565
       targetPort: 25565
       protocol: TCP
-    - name: metrics
+    - name: metrics    # Ensure metrics port has a name
       port: 9225
       targetPort: 9225
   selector:
