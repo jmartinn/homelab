@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: minecraft-backup
+  namespace: minecraft
+spec:
+  schedule: "0 */6 * * *"  # Every 6 hours
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: backup
+              image: bitnami/kubectl
+              command:
+                - /bin/sh
+                - -c
+                - |
+                  tar -czf /backup/world-$(date +%Y%m%d-%H%M%S).tar.gz /data/world
+              volumeMounts:
+                - name: minecraft-data
+                  mountPath: /data
+                - name: backup-storage
+                  mountPath: /backup
+          volumes:
+            - name: minecraft-data
+              persistentVolumeClaim:
+                claimName: minecraft-data
+            - name: backup-storage
+              persistentVolumeClaim:
+                claimName: minecraft-backups
+          restartPolicy: OnFailure

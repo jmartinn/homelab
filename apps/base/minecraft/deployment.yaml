@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minecraft
+  namespace: minecraft
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minecraft
+  template:
+    metadata:
+      labels:
+        app: minecraft
+    spec:
+      containers:
+        - name: minecraft
+          image: itzg/minecraft-server
+          ports:
+            - containerPort: 25565
+          env:
+            - name: EULA
+              value: "TRUE"
+            - name: TYPE
+              value: "FORGE"
+            - name: VERSION
+              value: "1.19.2"
+            - name: FORGE_VERSION
+              value: "43.4.0"
+            - name: MEMORY
+              value: "4G"
+          volumeMounts:
+            - name: minecraft-data
+              mountPath: /data
+            - name: mod-files
+              mountPath: /data/mods
+      volumes:
+        - name: minecraft-data
+          persistentVolumeClaim:
+            claimName: minecraft-data
+        - name: mod-files
+          configMap:
+            name: minecraft-mods

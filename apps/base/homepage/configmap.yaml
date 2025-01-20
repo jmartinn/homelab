@@ -26,6 +26,27 @@ data:
           href: https://grafana.jmartinn.net
           description: System Monitoring & Metrics
           indicator: true
+
+    - name: Gaming
+      icon: gamepad
+      items:
+        - name: Minecraft Server
+          icon: cube
+          href: minecraft.jmartinn.net
+          description: Minecraft Server
+          indicator: true
+          widget:
+            type: button
+            buttons:
+            - icon: play
+              text: Start
+              action: kubectl scale deployment -n minecraft minecraft --replicas=1
+            - icon: stop 
+              text: Stop
+              action: kubectl scale deployment -n minecraft minecraft --replicas=0
+            - icon: refresh
+              text: Restart
+              action: kubectl rollout restart deployment -n minecraft minecraft
           
     - name: Infrastructure
       icon: server
